@@ -1,6 +1,9 @@
 const PDF_JS_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs';
 const PDF_JS_WORKER_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
 
+// please do not ask me how this work, i just want a quick webapp
+// that makes reading research paper easier on the eyes
+
 let pdfjsLib;
 let pdfDoc = null;
 let currentScale = 1.5;
