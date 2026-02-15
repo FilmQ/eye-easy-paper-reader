@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eye-Easy Paper Reader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="top-bar">
+    <span class="top-bar-title">Eye-Easy Paper Reader</span>
+    <div class="top-bar-actions">
+      <button id="toggle-toolbar-btn" class="hidden" title="Toggle toolbar">Controls</button>
+      <div id="recent-wrapper">
+        <button id="recent-btn">Recent Papers</button>
+        <div id="recent-dropdown" class="hidden">
+          <p id="recent-empty">No recent papers yet.</p>
+          <ul id="recent-list"></ul>
+          <button id="recent-clear" class="hidden">Clear history</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Eye-Easy Paper Reader</h1>
+    <p class="subtitle">Upload or link a PDF — read it with inverted colors, easy on the eyes.</p>
+  </header>
+
+  <main>
+    <section id="input-section">
+      <div id="drop-zone">
+        <input type="file" id="file-input" accept="application/pdf" hidden>
+        <p>Drag &amp; drop a PDF here</p>
+        <button id="browse-btn">Browse file</button>
+      </div>
+
+      <div id="url-bar">
+        <input type="text" id="url-input" placeholder="Or paste a PDF URL...">
+        <button id="url-btn">Load</button>
+      </div>
+    </section>
+
+    <section id="viewer-section" class="hidden">
+      <div id="search-bar" class="hidden">
+        <input type="text" id="search-input" placeholder="Find in document...">
+        <span id="search-count"></span>
+        <button id="search-prev" title="Previous">&#x25B2;</button>
+        <button id="search-next" title="Next">&#x25BC;</button>
+        <button id="search-close" title="Close">&times;</button>
+      </div>
+      <div id="toolbar">
+        <div class="toolbar-group">
+          <button id="zoom-out-btn" title="Zoom out (-)">&#x2212;</button>
+          <span id="zoom-level">100%</span>
+          <button id="zoom-in-btn" title="Zoom in (+)">+</button>
+          <button id="fit-width-btn" title="Fit to width">Fit</button>
+        </div>
+        <div class="toolbar-group">
+          <span id="page-indicator"></span>
+        </div>
+        <div class="toolbar-group">
+          <select id="warmth-select" title="Warmth">
+            <option value="0">Warmth: Off</option>
+            <option value="0.15">Warmth: 15%</option>
+            <option value="0.3" selected>Warmth: 30%</option>
+            <option value="0.5">Warmth: 50%</option>
+            <option value="0.7">Warmth: 70%</option>
+            <option value="1">Warmth: 100%</option>
+          </select>
+          <select id="brightness-select" title="Text brightness">
+            <option value="1">Brightness: 100%</option>
+            <option value="0.95">Brightness: 95%</option>
+            <option value="0.9">Brightness: 90%</option>
+            <option value="0.85">Brightness: 85%</option>
+            <option value="0.7" selected>Brightness: 70%</option>
+            <option value="0.55">Brightness: 55%</option>
+            <option value="0.4">Brightness: 40%</option>
+          </select>
+          <button id="invert-btn" title="Toggle inversion" class="active">Invert: ON</button>
+          <button id="close-btn" title="Close PDF">Close</button>
+        </div>
+      </div>
+
+      <div id="pages-container">
+        <div id="page-card" class="hidden">Page 1 / 1</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

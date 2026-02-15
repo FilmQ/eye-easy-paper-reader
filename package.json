@@ -1,0 +1,12 @@
+{
+  "name": "eye-easy-paper-reader",
+  "version": "1.0.0",
+  "description": "PDF reader with inverted colors for reduced eye strain",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
